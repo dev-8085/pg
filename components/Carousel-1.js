@@ -148,16 +148,15 @@ const Home = () => {
 						// bg-[#c6f0ee]
 					>
 						<div className="mask  h-full w-full  flex-center">
-							{/* container class where m-0 p-5  */}
 							<div className=" m-0 ">
 								<div className="row   ">
 									<div className="col-lg-6 h-[80vh] lg:mt-4 col-12 order-md-1  order-1">
-										<a
+										<Link
 											href="/CommingSoon"
 											className={`lg:${item.textSize} ${item.margintop}  text-3xl ${item.buttonColor} ${item.buttonborder} border-2 mb-5 text-start no-underline  pl-1 pr-8 ml-4 rounded-xl py-1 inline-block`}
 										>
 											{item.buttonText}
-										</a>
+										</Link>
 										<div className="flex  flex-col items-center justify-center gap-2 lg:ml-5">
 											<h4
 												className={`lg:${item.h4Size} text-2xl px-2 mb-[15px] ${item.textColor} text-center font-normal`}

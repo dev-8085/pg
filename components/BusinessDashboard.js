@@ -47,15 +47,6 @@ const BusinessDashboard = () => {
 					<div className="flex flex-col md:flex-row gap-6 md:gap-12 items-center justify-center">
 						<div className="text-center relative md:mx-20 mt-4">
 							<div className="mt-[7rem] ">
-								{/* <div className="w-[10rem] h-[10rem]   overflow-hidden rounded-full  flex items-center justify-around">
-									<Image
-										src="/media/differentfromothers.png"
-										className="object-cover "
-										alt=""
-										width={100}
-										height={120}
-									/>
-								</div> */}
 								<h1 className="text-animation text-center  font-medium text-4xl uppercase pb-1 ">
 									Different from Others
 								</h1>

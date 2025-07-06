@@ -211,7 +211,7 @@ function Navbar() {
 								);
 							})}
 						</ul>
-						{/* <ul className="flex pt-3 gap-10 items-center text-white">
+						{ <ul className="flex pt-3 gap-10 items-center text-white">
 							<li>
 								<Link
 									href="/"
@@ -271,7 +271,7 @@ function Navbar() {
 									Contact
 								</Link>
 							</li>
-						</ul> */}
+						</ul> }
 					</div>
 					<div className="text-white sticky mr-4 decoration-none no-underline">
 						<Link href="/GetApp" className="decoration-none no-underline">

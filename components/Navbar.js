@@ -92,7 +92,7 @@ function Navbar() {
 					/>
 				</div>
 				<div className="lg:hidden text-black flex items-center gap-[10rem]">
-					<a href="/" class="navbar-brand d-block d-lg-none">
+					<a href="/" className="navbar-brand d-block d-lg-none">
 						<Image
 							src="/media/smart-hostel-PG-02.png"
 							alt="logo"
@@ -102,7 +102,7 @@ function Navbar() {
 					</a>
 					<button
 						type="button"
-						class="navbar-toggler"
+						className="navbar-toggler"
 						// data-bs-toggle="collapse"
 						// data-bs-target="#navbarCollapse"
 						onClick={toggleNavbar}

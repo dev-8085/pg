@@ -40,29 +40,29 @@ const NewSlider = () => {
 			// text-[#854836] bg-[#fdea94c6]
 			className=" section  items-center real cont lg:h-[800vh] relative w-full "
 		>
-			<div class="hidden lg:flex slides overflow-hidden w-full  h-[100vh] sticky top-0 left-0 ">
-				<div class="slide frmleft  flex items-center justify-center w-full h-screen flex-shrink-0 ">
+			<div className="hidden lg:flex slides overflow-hidden w-full  h-[100vh] sticky top-0 left-0 ">
+				<div className="slide frmleft  flex items-center justify-center w-full h-screen flex-shrink-0 ">
 					<SeatMgmt />
 				</div>
-				<div class="slide flex items-center justify-center w-full h-screen flex-shrink-0 ">
+				<div className="slide flex items-center justify-center w-full h-screen flex-shrink-0 ">
 					<RegistrationBoard />
 				</div>
-				<div class="slide flex items-center justify-center w-full h-screen flex-shrink-0 ">
+				<div className="slide flex items-center justify-center w-full h-screen flex-shrink-0 ">
 					<SmartDigitalAccount />
 				</div>
-				<div class="slide flex items-center justify-center w-full h-screen flex-shrink-0 ">
+				<div className="slide flex items-center justify-center w-full h-screen flex-shrink-0 ">
 					<MultipleUser />
 				</div>
-				<div class="slide flex items-center justify-center w-full h-screen flex-shrink-0 ">
+				<div className="slide flex items-center justify-center w-full h-screen flex-shrink-0 ">
 					<MultipleBusiness />
 				</div>
-				<div class="slide flex items-center justify-center w-full h-screen flex-shrink-0 ">
+				<div className="slide flex items-center justify-center w-full h-screen flex-shrink-0 ">
 					<OnlineBusinessPlatform />
 				</div>
-				<div class="slide flex items-center justify-center w-full h-screen flex-shrink-0 ">
+				<div className="slide flex items-center justify-center w-full h-screen flex-shrink-0 ">
 					<SPECIALSMARTFEATURES />
 				</div>
-				<div class="slide flex items-center justify-center w-full h-screen flex-shrink-0 ">
+				<div className="slide flex items-center justify-center w-full h-screen flex-shrink-0 ">
 					<BusinessDashboard />
 				</div>
 			</div>

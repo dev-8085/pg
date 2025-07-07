@@ -217,7 +217,8 @@ const NewHomePage = () => {
 
       <div className="rgtContainer w-full lg:w-[50vw]">
         <div className="rgt opacity-100 lg:-mb-[5rem] h-full">
-          <Image src="/media/girl.gif" alt="home" width={400} height={450} />
+         <Image src="/media/girl.gif" alt="home" width={400} height={450} />
+
         </div>
 
         <ul className="flex flex-col gap-5 lg:w-[40vw]">

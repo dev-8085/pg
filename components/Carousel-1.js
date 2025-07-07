@@ -80,8 +80,8 @@ const Home = () => {
 		const initializeCarousel = () => {
 			const carousel = document.getElementById("myCarousel");
 			if (carousel) {
-				const interval = 3000; // Interval in milliseconds 3000
-				let slideIndex = 0; // Initialize slide index
+				const interval = 3000;
+				let slideIndex = 0;
 
 				const slides = carousel.querySelectorAll(".carousel-item");
 				const totalSlides = slides.length;
@@ -98,7 +98,6 @@ const Home = () => {
 					slides.forEach((slide) => {
 						slide.classList.remove("active");
 					});
-
 					slides[index].classList.add("active");
 				};
 
@@ -121,12 +120,6 @@ const Home = () => {
 					clearInterval(intervalId);
 					intervalId = setInterval(nextSlide, interval);
 				});
-
-				// const prevButton = document.querySelector(".carousel-control-prev");
-				// const nextButton = document.querySelector(".carousel-control-next");
-
-				// prevButton.addEventListener("click", prevSlide);
-				// nextButton.addEventListener("click", nextSlide);
 			}
 		};
 
@@ -136,53 +129,51 @@ const Home = () => {
 	return (
 		<div
 			id="myCarousel"
-			className="carousel slide carousel-fade  relative font-['Berlin_Sans_FB']"
+			className="carousel slide carousel-fade relative font-['Berlin_Sans_FB']"
 			data-ride="carousel"
 		>
-			<div className="carousel-inner  w-full lg:h-[80vh]">
+			<div className="carousel-inner w-full lg:h-[80vh]">
 				{carouselData.map((item, index) => (
 					<div
 						key={index}
-						className={`carousel-item   p-3 h-screen active `}
-						// style={{ background: "url('/media/hero-bg-light.webp')" }}
-						// bg-[#c6f0ee]
+						className={`carousel-item p-3 h-screen ${index === 0 ? "active" : ""}`}
 					>
-						<div className="mask  h-full w-full  flex-center">
-							<div className=" m-0 ">
-								<div className="row   ">
-									<div className="col-lg-6 h-[80vh] lg:mt-4 col-12 order-md-1  order-1">
+						<div className="mask h-full w-full flex-center">
+							<div className="m-0">
+								<div className="row">
+									<div className="col-lg-6 h-[80vh] lg:mt-4 col-12 order-md-1 order-1">
 										<Link
 											href="/CommingSoon"
-											className={`lg:${item.textSize} ${item.margintop}  text-3xl ${item.buttonColor} ${item.buttonborder} border-2 mb-5 text-start no-underline  pl-1 pr-8 ml-4 rounded-xl py-1 inline-block`}
+											className={`lg:${item.textSize} ${item.margintop} text-3xl ${item.buttonColor} ${item.buttonborder} border-2 mb-5 text-start no-underline pl-1 pr-8 ml-4 rounded-xl py-1 inline-block`}
 										>
 											{item.buttonText}
 										</Link>
-										<div className="flex  flex-col items-center justify-center gap-2 lg:ml-5">
+										<div className="flex flex-col items-center justify-center gap-2 lg:ml-5">
 											<h4
 												className={`lg:${item.h4Size} text-2xl px-2 mb-[15px] ${item.textColor} text-center font-normal`}
 											>
 												{item.title}
 											</h4>
 											<div
-												className={`lg:text-2xl text-lg  mb-[15px] ${item.pcolor} ${item.pmargin} text-center`}
+												className={`lg:text-2xl text-lg mb-[15px] ${item.pcolor} ${item.pmargin} text-center`}
 											>
-												<p className={`${item.pmargin} px-2 `}>
+												<p className={`${item.pmargin} px-2`}>
 													{item.description}
 												</p>
 												<p className="px-2">{item.description1}</p>
-												<div className="text-xl text-center flex  gap-2  lg:gap-4 items-center ">
+												<div className="text-xl text-center flex gap-2 lg:gap-4 items-center">
 													<p
-														className={` px-3 py-2 ${item.border}  ${item.borderBlack} items-center rounded  `}
+														className={`px-3 py-2 ${item.border} ${item.borderBlack} items-center rounded`}
 													>
 														{item.description4}
 													</p>
 													<p
-														className={` px-3 py-2 ${item.border} ${item.borderBlack} items-center rounded  `}
+														className={`px-3 py-2 ${item.border} ${item.borderBlack} items-center rounded`}
 													>
 														{item.description2}
 													</p>
 													<p
-														className={` px-3 py-2 ${item.border} ${item.borderBlack} items-center rounded  `}
+														className={`px-3 py-2 ${item.border} ${item.borderBlack} items-center rounded`}
 													>
 														{item.description3}
 													</p>

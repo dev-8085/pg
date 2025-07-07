@@ -115,17 +115,18 @@ const RegistrationBoard = () => {
 									</h1>
 								</div>
 							</div>
-							<div className="ml-6 ">
-								{data.map((item, index) => (
-									<div
-										key={index}
-										// ref={subheadingRef}
-										// ref={(el) => (subHeadingsRef.current[index] = el)}
-										className="text-center md:w-[30rem] text-md px-7 py-1 rounded-lg font-semibold"
-									>
-										<h3 className="text-xl">{item.title}</h3>
-										<p className=" text-sm">{item.description}</p>
-									</div>
+							<div className="ml-6">
+	{data?.map((item, index) => (
+		<div
+			key={`item-${index}`}
+			// ref={subheadingRef}
+			// ref={(el) => (subHeadingsRef.current[index] = el)}
+			className="text-center md:w-[30rem] text-md px-7 py-1 rounded-lg font-semibold"
+		>
+			<h3 className="text-xl">{item.title}</h3>
+			<p className="text-sm">{item.description}</p>
+		</div>
+	
 								))}
 							</div>
 						</div>

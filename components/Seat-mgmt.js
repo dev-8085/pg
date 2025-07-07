@@ -148,16 +148,16 @@ const SeatMgmt = () => {
 								</h1>
 							</div>
 							<div className="">
-								{data.map((item, index) => (
-									<div
-										key={index}
-										ref={(el) => (subHeadingsRef.current[index] = el)}
-										className="text-center md:w-[30rem] text-md px-7 py-1 rounded-lg font-semibold"
-									>
-										<h3 className="text-xl">{item.title}</h3>
-										<p className=" text-sm">{item.description}</p>
-									</div>
-								))}
+	{data?.map((item, index) => (
+		<div
+			key={`item-${index}`}
+			ref={(el) => (subHeadingsRef.current[index] = el)}
+			className="text-center md:w-[30rem] text-md px-7 py-1 rounded-lg font-semibold"
+		>
+			<h3 className="text-xl">{item.title}</h3>
+			<p className="text-sm">{item.description}</p>
+		</div>
+								))}	
 							</div>
 						</div>
 						<div className="rounded-full h-[20rem] w-[20rem] md:h-[30rem] md:w-[30rem] lg:-ml-[4rem] hidden lg:flex items-center justify-center overflow-hidden">

@@ -64,16 +64,15 @@ const SPECIALSMARTFEATURES = () => {
 									Special S-mart Features
 								</h1>
 							</div>
-							<div className="">
-								{data.map((item, index) => (
-									<div
-										key={index}
-										
-										className="text-center md:w-[30rem] text-md px-7 py-1 rounded-lg font-semibold"
-									>
-										<h3 className="text-xl">{item.title}</h3>
-										<p className=" text-sm">{item.description}</p>
-									</div>
+						<div className="">
+	{data?.map((item, index) => (
+		<div
+			key={`item-${index}`}
+			className="text-center md:w-[30rem] text-md px-7 py-1 rounded-lg font-semibold"
+		>
+			<h3 className="text-xl">{item.title}</h3>
+			<p className="text-sm">{item.description}</p>
+		</div>
 								))}
 							</div>
 						</div>

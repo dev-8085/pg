@@ -64,15 +64,16 @@ const SmartDigitalAccount = () => {
 								</h1>
 							</div>
 							<div className="">
-								{data.map((item, index) => (
-									<div
-										key={index}
-									
-										className="text-center md:w-[30rem] text-md px-7 py-1 rounded-lg font-semibold"
-									>
-										<h3 className="text-xl">{item.title}</h3>
-										<p className=" text-sm">{item.description}</p>
-									</div>
+	{data?.map((item, index) => (
+		<div
+			key={`data-${index}`}
+			className="text-center md:w-[30rem] text-md px-7 py-1 rounded-lg font-semibold"
+		>
+			{item.title && <h3 className="text-xl">{item.title}</h3>}
+			{item.description && <p className="text-sm">{item.description}</p>}
+		</div>
+
+
 								))}
 							</div>
 						</div>

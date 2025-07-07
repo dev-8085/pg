@@ -25,7 +25,7 @@ export default function Modal() {
 											Label
 										</label>
 										<div className="flex rounded-lg shadow-sm h-[3rem]">
-											<div className="py-2 px-4 w-full border-gray-200 shadow-sm rounded-s-lg text-sm bg-white text-orange-500 text-lg flex items-center">
+											<div className="py-2 px-4 w-full border-gray-200 shadow-sm rounded-s-lg bg-white text-orange-500 text-lg flex items-center">
 												Schedule a demo
 											</div>
 

@@ -1,8 +1,13 @@
 "use client";
 import Link from "next/link";
-import { useEffect } from "react";
+import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 const Home = () => {
+	const carouselRef = useRef(null);
+	const slideIndex = useRef(0);
+	const intervalRef = useRef(null);
+
 	const carouselData = [
 		{
 			bgColor: "bg-gray-200",
@@ -77,66 +82,44 @@ const Home = () => {
 	];
 
 	useEffect(() => {
-		const initializeCarousel = () => {
-			const carousel = document.getElementById("myCarousel");
-			if (carousel) {
-				const interval = 3000;
-				let slideIndex = 0;
+		const carousel = carouselRef.current;
+		if (!carousel) return;
 
-				const slides = carousel.querySelectorAll(".carousel-item");
-				const totalSlides = slides.length;
+		const slides = carousel.querySelectorAll(".carousel-item");
+		const totalSlides = slides.length;
 
-				slides.forEach((slide, index) => {
-					if (index === 0) {
-						slide.classList.add("active");
-					} else {
-						slide.classList.remove("active");
-					}
-				});
-
-				const showSlide = (index) => {
-					slides.forEach((slide) => {
-						slide.classList.remove("active");
-					});
-					slides[index].classList.add("active");
-				};
-
-				const nextSlide = () => {
-					slideIndex = (slideIndex + 1) % totalSlides;
-					showSlide(slideIndex);
-				};
-
-				const prevSlide = () => {
-					slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
-					showSlide(slideIndex);
-				};
-
-				let intervalId = setInterval(nextSlide, interval);
-
-				carousel.addEventListener("mouseenter", () =>
-					clearInterval(intervalId)
-				);
-				carousel.addEventListener("mouseleave", () => {
-					clearInterval(intervalId);
-					intervalId = setInterval(nextSlide, interval);
-				});
-			}
+		const showSlide = (index) => {
+			slides.forEach((slide) => slide.classList.remove("active"));
+			slides[index].classList.add("active");
 		};
 
-		initializeCarousel();
+		const nextSlide = () => {
+			slideIndex.current = (slideIndex.current + 1) % totalSlides;
+			showSlide(slideIndex.current);
+		};
+
+		showSlide(0);
+		intervalRef.current = setInterval(nextSlide, 3000);
+
+		carousel.addEventListener("mouseenter", () => clearInterval(intervalRef.current));
+		carousel.addEventListener("mouseleave", () => {
+			intervalRef.current = setInterval(nextSlide, 3000);
+		});
+
+		return () => clearInterval(intervalRef.current);
 	}, []);
 
 	return (
 		<div
+			ref={carouselRef}
 			id="myCarousel"
 			className="carousel slide carousel-fade relative font-['Berlin_Sans_FB']"
-			data-ride="carousel"
 		>
 			<div className="carousel-inner w-full lg:h-[80vh]">
 				{carouselData.map((item, index) => (
 					<div
 						key={index}
-						className={`carousel-item p-3 h-screen ${index === 0 ? "active" : ""}`}
+						className={`carousel-item p-3 h-screen ${index === 0 ? "active" : ""} ${item.bgColor}`}
 					>
 						<div className="mask h-full w-full flex-center">
 							<div className="m-0">
@@ -149,40 +132,38 @@ const Home = () => {
 											{item.buttonText}
 										</Link>
 										<div className="flex flex-col items-center justify-center gap-2 lg:ml-5">
-											<h4
-												className={`lg:${item.h4Size} text-2xl px-2 mb-[15px] ${item.textColor} text-center font-normal`}
-											>
+											<h4 className={`lg:${item.h4Size} text-2xl px-2 mb-[15px] ${item.textColor} text-center font-normal`}>
 												{item.title}
 											</h4>
-											<div
-												className={`lg:text-2xl text-lg mb-[15px] ${item.pcolor} ${item.pmargin} text-center`}
-											>
+											<div className={`lg:text-2xl text-lg mb-[15px] ${item.pcolor} ${item.pmargin} text-center`}>
 												<p className={`${item.pmargin} px-2`}>
 													{item.description}
 												</p>
 												<p className="px-2">{item.description1}</p>
-												<div className="text-xl text-center flex gap-2 lg:gap-4 items-center">
-													<p
-														className={`px-3 py-2 ${item.border} ${item.borderBlack} items-center rounded`}
-													>
-														{item.description4}
-													</p>
-													<p
-														className={`px-3 py-2 ${item.border} ${item.borderBlack} items-center rounded`}
-													>
-														{item.description2}
-													</p>
-													<p
-														className={`px-3 py-2 ${item.border} ${item.borderBlack} items-center rounded`}
-													>
-														{item.description3}
-													</p>
-												</div>
+												{item.description4 && (
+													<div className="text-xl text-center flex gap-2 lg:gap-4 items-center">
+														<p className={`px-3 py-2 ${item.border} ${item.borderBlack} items-center rounded`}>
+															{item.description4}
+														</p>
+														<p className={`px-3 py-2 ${item.border} ${item.borderBlack} items-center rounded`}>
+															{item.description2}
+														</p>
+														<p className={`px-3 py-2 ${item.border} ${item.borderBlack} items-center rounded`}>
+															{item.description3}
+														</p>
+													</div>
+												)}
 											</div>
 										</div>
 									</div>
 									<div className="col-lg-6 hidden lg:block order-2">
-										<img src={item.imgSrc} alt="slide" />
+										<Image
+											src={item.imgSrc}
+											alt="slide"
+											width={600}
+											height={400}
+											className="object-contain"
+										/>
 									</div>
 								</div>
 							</div>

@@ -131,44 +131,42 @@ const NewHomePage = () => {
   }, []);
 
   return (
-    <div className="section px-6 lg:px-12 py-10 flex flex-col lg:flex-row gap-6">
-      {/* LEFT SECTION */}
-      <div className="lg:w-[60%] space-y-4">
-        <h1 className="text-3xl lg:text-5xl font-bold">
+    <section className="w-full px-4 py-10 lg:px-12 flex flex-col lg:flex-row gap-10">
+      {/* LEFT */}
+      <div className="w-full lg:w-[60%] space-y-6">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
           S-mart way to rent your{" "}
           <span className="text-orange-500">{typeEffect}</span>
         </h1>
 
-        <div className="reveal-text text-base text-gray-700 leading-tight">
-          Discover a world of convenience with the S-Mart app, offering a
-          myriad of features from audit trails to hassle-free rent collection.
-          From maintaining electricity bills to transparent record-keeping,
-          enjoy seamless operations with Google Cloud backup and restoration.
+        <div className="reveal-text text-gray-700 text-base sm:text-lg leading-relaxed">
+          Discover a world of convenience with the S-Mart app, offering a myriad
+          of features from audit trails to hassle-free rent collection. From
+          maintaining electricity bills to transparent record-keeping, enjoy
+          seamless operations with Google Cloud backup and restoration.
         </div>
 
-        <div ref={contentRef} className="space-y-4">
-          <h2 className="text-xl font-semibold">We Manage:</h2>
+        <div ref={contentRef} className="space-y-5">
+          <h2 className="text-lg sm:text-xl font-semibold">We Manage:</h2>
           <div className="flex flex-wrap gap-3">
-            {["Hostel", "PGs", "Studio", "Co-living", "Student Housing"].map((item, i) => (
-              <div
-                key={i}
-                className="border rounded-md px-4 py-2 shadow text-sm font-medium bg-yellow-100 text-orange-700"
-              >
-                {item}
-              </div>
-            ))}
+            {["Hostel", "PGs", "Studio", "Co-living", "Student Housing"].map(
+              (item, i) => (
+                <div
+                  key={i}
+                  className="px-4 py-2 rounded-md text-sm font-medium bg-yellow-100 text-orange-700 shadow"
+                >
+                  {item}
+                </div>
+              )
+            )}
           </div>
 
           <div className="max-w-md">
-            <label htmlFor="mobile-number" className="sr-only">
-              Mobile Number
-            </label>
-            <div className="flex">
+            <div className="flex w-full">
               <input
                 type="text"
-                id="mobile-number"
                 placeholder="Enter Mobile Number"
-                className="w-full border border-gray-300 rounded-l-md px-4 py-2 text-sm focus:outline-none"
+                className="w-full border border-gray-300 px-4 py-2 rounded-l-md text-sm focus:outline-none"
               />
               <button className="bg-orange-500 text-white px-4 py-2 rounded-r-md text-sm hover:bg-orange-600">
                 Get Demo
@@ -178,46 +176,52 @@ const NewHomePage = () => {
         </div>
       </div>
 
-      {/* RIGHT SECTION */}
-      <div className="lg:w-[40%] space-y-10">
-        <div className="w-full flex justify-center">
+      {/* RIGHT */}
+      <div className="w-full lg:w-[40%] space-y-10">
+        <div className="flex justify-center">
           <Image
             src="/media/girl.gif"
             alt="home"
-            width={400}
-            height={450}
+            width={350}
+            height={400}
+            className="h-auto w-full max-w-[350px] sm:max-w-[400px]"
             unoptimized
             priority
           />
         </div>
 
-        <div className="text-center">
+        <div className="text-center px-2">
           <p className="uppercase text-sm font-semibold text-orange-600 mb-2">
             --- How the app can benefit hostel and PG owners ---
           </p>
-          <h2 className="text-3xl font-bold">
-            Explore our <span className="text-orange-500">S-mart Features</span>
+          <h2 className="text-2xl sm:text-3xl font-bold">
+            Explore our{" "}
+            <span className="text-orange-500">S-mart Features</span>
           </h2>
         </div>
 
-        <ul className="space-y-6">
+        <ul className="flex flex-col gap-5">
           {features.map((feature, index) => (
             <li
               key={index}
-              className="border rounded-md shadow-md p-4 flex gap-4 bg-white hover:bg-gray-800 hover:text-white transition duration-300"
+              className="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-4 border shadow bg-white hover:bg-gray-800 hover:text-white rounded-md transition duration-300"
             >
-              <div className="w-[60px] h-[60px]">
-                <img src={feature.imgSrc} alt={feature.alt} className="object-contain h-full w-full" />
+              <div className="w-[60px] h-[60px] flex-shrink-0">
+                <img
+                  src={feature.imgSrc}
+                  alt={feature.alt}
+                  className="object-contain w-full h-full"
+                />
               </div>
-              <div>
+              <div className="text-center sm:text-left">
                 <h3 className="font-semibold">{feature.title}</h3>
-                <p className="text-sm">{feature.description}</p>
+                <p className="text-sm mt-1">{feature.description}</p>
               </div>
             </li>
           ))}
         </ul>
       </div>
-    </div>
+    </section>
   );
 };
 

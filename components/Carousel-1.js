@@ -189,16 +189,16 @@ const EnhancedCarousel = () => {
         </div>
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows - Only visible on large screens */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow z-50"
+        className="hidden lg:flex absolute left-4 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow z-50"
       >
         <ChevronLeft size={18} />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow z-50"
+        className="hidden lg:flex absolute right-4 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow z-50"
       >
         <ChevronRight size={18} />
       </button>

@@ -234,7 +234,7 @@ const NewHomePage = () => {
 
 					<div className="max-w-md  mt-5">
 						<div className="m-3">
-							<label for="mobile-number" className="sr-only">
+							<label htmlFor="mobile-number" className="sr-only">
 								Enter Mobile Number
 							</label>
 							<div className="flex rounded-lg shadow-sm">

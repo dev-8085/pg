@@ -21,6 +21,7 @@
     "framer-motion": "^11.2.4",
     "gsap": "^3.12.5",
     "jquery": "^3.7.1",
+    "lucide-react": "^0.525.0",
     "next": "^14.2.30",
     "next-video": "^1.0.4",
     "react": "^18.3.1",

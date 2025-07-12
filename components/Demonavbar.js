@@ -33,7 +33,7 @@ function Navbar() {
       <div className="relative">
         <div className="hidden lg:block fixed top-0 left-0 z-50" style={{ width: "10rem" }}>
           <Image
-            src="/media/smart-hostel-PG-02.png"
+            src="/media/Logo1.png"
             alt="logo"
             width={160}
             height={80}
@@ -45,7 +45,7 @@ function Navbar() {
         {/* Mobile Header */}
         <div className="lg:hidden flex items-center justify-between px-4 py-2">
           <Link href="/">
-            <Image src="/media/smart-hostel-PG-02.png" alt="logo" width={140} height={60} className="h-auto" />
+            <Image src="/media/Logo1.png" alt="logo" width={140} height={60} className="h-auto" />
           </Link>
           <button onClick={toggleNavbar}>
             {isOpen ? (

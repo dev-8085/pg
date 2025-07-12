@@ -7,7 +7,7 @@ const Subscription = () => {
 			<div className="section text-center my-5 ">
 				<h1 className="uppercase text-2xl  ">just one step away </h1>
 				<h6 className="text-sm">
-					choose one and become a S-Mart family member
+					choose one and become a S-Mart family member
 				</h6>
 			</div>
 			<div className="flex flex-col lg:flex-row  gap-10 lg:gap-7 my-5 mx-7 ">

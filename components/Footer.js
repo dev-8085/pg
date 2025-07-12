@@ -64,7 +64,7 @@ const Footer = () => {
 							<div className="col-md-6 col-lg-4 flex flex-col">
 								<div className="mb-3">
 									<div className="flex flex-col items-center rounded uppercase text-black">
-										<Image src="/media/smart.jpg" alt="" height={100} width={300} />
+										<Image src="/media/Logo2.png" alt="" height={200} width={280} />
 									</div>
 								</div>
 
@@ -78,7 +78,7 @@ const Footer = () => {
 												Now
 											</button>
 										</div>
-										<h1 className="font-bold text-2xl mt-3">No worry for hustle</h1>
+										<h1 className="font-bold text-2xl mt-2">No worry for hustle</h1>
 										<h3 className="text-sm">to give your Hostel / PG on rent</h3>
 									</div>
 								</div>

@@ -66,13 +66,13 @@ const Tenant = () => {
 					<div className="w-full">
 						<div className="flex flex-col w-full lg:flex-row items-center justify-center gap-10">
 							<div className="lg:h-[35rem] -mt-[3rem] lg:w-[45vw] w-[18rem] relative rounded-2xl overflow-hidden group shadow-2xl border-4 border-transparent bg-gradient-to-br from-orange-300 via-yellow-100 to-orange-200">
-  <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-orange-500 via-yellow-400 to-orange-500 z-0" />
+  <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-red-500 via-yellow-400 to-orange-500 z-0" />
   <div className="relative h-full w-full rounded-2xl overflow-hidden z-10 flex items-center justify-center">
     <Image
-      src="/media/smart.jpeg"
+      src="/media/websiteTAPP.jpg"
       alt="Tenant App Preview"
-      height={500}
-      width={520}
+      height={420}
+      width={440}
       className="object-cover h-full w-full rounded-2xl transform transition-transform duration-500 group-hover:scale-105"
     />
   </div>
